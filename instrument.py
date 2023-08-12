@@ -77,3 +77,7 @@ class Instrument:
         """
         self.ser.write(bytearray(response + "\r\n", 'utf-8'))
 
+
+serial_config = serial.Serial(port='COM1')
+instrument_test = Instrument(ser=serial_config)
+
