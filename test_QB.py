@@ -4,7 +4,7 @@ import serial
 
 def test_QB():
 
-    serial_config = serial.Serial(port='COM1')
+    serial_config = serial.Serial(port='COM3')
     client: Client = Client(ser=serial_config)
 
     temperatures = []
