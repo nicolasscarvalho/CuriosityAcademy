@@ -1,7 +1,6 @@
 import serial
 import random
 
-
 class Instrument:
     """
     Simulated instrument class that reads and writes messages to a serial port.
@@ -76,7 +75,3 @@ class Instrument:
             >>> instrument.write_response("Response message")
         """
         self.ser.write(bytearray(response + "\r\n", 'utf-8'))
-
-
-serial_config = serial.Serial(port='COM1')
-instrument: Instrument = Instrument(ser=serial_config)
