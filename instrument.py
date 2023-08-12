@@ -20,7 +20,7 @@ class Instrument:
     Args:
         ser (serial.Serial): An instance of the `serial.Serial` class representing the serial port.
     """
-    def __init__(self, ser: serial.Serial):
+    def __init__(self, ser: serial.Serial) -> None:
         """
         Initialize the Instrument with random attribute values and a serial port.
 
@@ -34,7 +34,7 @@ class Instrument:
         self.current = random.randint(0, 2000)
         self.ser = ser
 
-    def read_message(self):
+    def read_message(self) -> None:
         """
         Read a message from the serial port and respond accordingly.
 
@@ -61,7 +61,7 @@ class Instrument:
         else:
             raise ValueError("Unknown command: " + command)
 
-    def write_response(self, response):
+    def write_response(self, response: str) -> None:
         """
         Write a response to the serial port.
 
@@ -76,8 +76,3 @@ class Instrument:
             >>> instrument.write_response("Response message")
         """
         self.ser.write(bytearray(response + "\r\n", 'utf-8'))
-
-
-serial_config = serial.Serial(port='COM1')
-instrument_test = Instrument(ser=serial_config)
-
