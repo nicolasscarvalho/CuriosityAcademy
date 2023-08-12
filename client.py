@@ -34,7 +34,7 @@ class Client:
 
         return response
     
-    def write_request(self, response: str) -> None:
+    def write_request(self, request: str) -> None:
         """
         Write a request to the serial port.
 
@@ -45,5 +45,5 @@ class Client:
             request (str): The request to be sent.
         """
 
-        self.ser.write(bytearray(response + "\r\n", 'utf-8'))
-        response = self.read_response()
+        self.ser.write(bytearray(request + "\r\n", 'utf-8'))
+        request = self.read_response()
