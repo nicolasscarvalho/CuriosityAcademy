@@ -11,6 +11,9 @@ def test_QB():
     where he requests the temperature of the equipment, storing it in a list. 
     At the end, the test checks whether each temperature is greater than 80 degrees; 
     If so, an error is generated.
+
+    Raises:
+        DANGEROUS temperature: If temperature > 80 
     """
     client: Client = Client(serial.Serial('COM1', 9600, timeout=2))
     instrument: Instrument = Instrument(serial.Serial('COM2', 9600, timeout=2))
@@ -27,6 +30,6 @@ def test_QB():
 
     for temperature in temperatures:
         if temperature > 80:
-            raise ValueError('OK Temperature')
-        else:
             ValueError('DANGEROUS temperature')
+        else:
+            print('OK Temperature')
