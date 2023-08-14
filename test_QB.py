@@ -27,6 +27,6 @@ def test_QB():
 
     for temperature in temperatures:
         if temperature > 80:
-            print('Temperatura OK')
+            raise ValueError('OK Temperature')
         else:
-            print('Temperatura PERIGOSA')
+            ValueError('DANGEROUS temperature')
