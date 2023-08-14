@@ -21,8 +21,8 @@ def test_QB():
 
         client.write_request('TMP')
         instrument.read_message()
-
         temperature: int = int(client.read_response())
+        
         temperatures.append(temperature)
 
     for temperature in temperatures:
