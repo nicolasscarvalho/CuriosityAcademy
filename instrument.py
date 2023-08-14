@@ -1,11 +1,10 @@
-import serial
 import random
 
-from client import Client
+import serial
+
 
 class Instrument:
-    """
-    Simulated instrument class that reads and writes messages to a serial port.
+    """Simulated instrument class that reads and writes messages to a serial port.
 
     This class simulates an instrument that communicates through a serial port.
     It generates random values for status, type, voltage, temperature, and current.
@@ -21,9 +20,9 @@ class Instrument:
     Args:
         ser (serial.Serial): An instance of the `serial.Serial` class representing the serial port.
     """
+
     def __init__(self, ser: serial.Serial) -> None:
-        """
-        Initialize the Instrument with random attribute values and a serial port.
+        """Initialize the Instrument with random attribute values and a serial port.
 
         Args:
             ser (serial.Serial): An instance of the `serial.Serial` class representing the serial port.
@@ -36,8 +35,7 @@ class Instrument:
         self.ser = ser
 
     def read_message(self) -> None:
-        """
-        Read a message from the serial port and respond accordingly.
+        """Read a message from the serial port and respond accordingly.
 
         This method reads a message from the serial port and processes it based on
         the command. It can respond with the status, type, voltage, temperature, or
@@ -66,8 +64,7 @@ class Instrument:
             raise ValueError("Unknown command: " + command)
 
     def write_response(self, response: str) -> None:
-        """
-        Write a response to the serial port.
+        """Write a response to the serial port.
 
         This method writes a response to the serial port. The response is sent as bytes
         using the UTF-8 encoding.
@@ -79,4 +76,4 @@ class Instrument:
             >>> instrument = Instrument(ser)
             >>> instrument.write_response("Response message")
         """
-        self.ser.write(bytearray(response + "\r\n", 'utf-8'))
+        self.ser.write(bytearray(response + "\r\n", "utf-8"))
