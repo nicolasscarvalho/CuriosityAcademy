@@ -80,13 +80,3 @@ class Instrument:
             >>> instrument.write_response("Response message")
         """
         self.ser.write(bytearray(response + "\r\n", 'utf-8'))
-
-
-
-client: Client = Client(serial.Serial('COM1', 9600, timeout=2))
-instrument: Instrument = Instrument(serial.Serial('COM2', 9600, timeout=2))
-
-for i in range(1, 20):
-    client.write_request('TMP')
-    print(instrument.read_message())
-    print(client.read_response())
