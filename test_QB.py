@@ -1,5 +1,4 @@
 from client import Client
-import serial
 
 from instrument import Instrument
 from test_QA import test_QA
