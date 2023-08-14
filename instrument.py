@@ -1,6 +1,8 @@
 import serial
 import random
 
+from client import Client
+
 class Instrument:
     """
     Simulated instrument class that reads and writes messages to a serial port.
@@ -45,7 +47,7 @@ class Instrument:
             ValueError: If an unknown command is received.
         """
         message = self.ser.readline().decode()
-        command = message[:3]
+        command = message[0:3]
 
         if command == "STA":
             self.write_response(str(self.status))
@@ -54,7 +56,10 @@ class Instrument:
         elif command == "VOL":
             self.write_response(str(self.voltage))
         elif command == "TMP":
-            self.write_response(str(self.temperature))
+            new_temperature: int = random.randint(0, 85)
+
+            self.write_response(str(new_temperature))
+            self.temperature = new_temperature
         elif command == "CUR":
             self.write_response(str(self.current))
         else:
@@ -75,3 +80,13 @@ class Instrument:
             >>> instrument.write_response("Response message")
         """
         self.ser.write(bytearray(response + "\r\n", 'utf-8'))
+
+
+
+client: Client = Client(serial.Serial('COM1', 9600, timeout=2))
+instrument: Instrument = Instrument(serial.Serial('COM2', 9600, timeout=2))
+
+for i in range(1, 20):
+    client.write_request('TMP')
+    print(instrument.read_message())
+    print(client.read_response())

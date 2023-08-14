@@ -46,4 +46,3 @@ class Client:
         """
 
         self.ser.write(bytearray(request + "\r\n", 'utf-8'))
-        request = self.read_response()

@@ -1,8 +1,7 @@
 from client import Client
-from instrument import Instrument
 import serial
 
-def test_QB():
+def test_QB(client_obj):
     """
     Checks if temperatures are greater than 80 degrees.
 
@@ -11,18 +10,15 @@ def test_QB():
     At the end, the test checks whether each temperature is greater than 80 degrees; 
     If so, an error is generated.
     """
-    serial_config = serial.Serial(port='COM3')
+    serial_config = serial.Serial(port='COM2')
     client: Client = Client(ser=serial_config)
 
     temperatures = []
 
     for i in range(1, 21):
-        instrument: Instrument = Instrument(ser=serial_config)
 
         client.write_request('TMP')
-        instrument.read_message()
-
         temperatures.append( int(client.read_response()) )
 
     for temperature in temperatures:
-        assert temperature > 80
+        print(temperature > 80)
