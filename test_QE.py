@@ -7,7 +7,7 @@ def test_QE():
     in the range of ]25mA, 800mA[. If voltage < 25mA, print a message.
 
     returns:
-        currents list(int): List with the voltage values
+        currents list(int): List with the eletric current values
     """ 
     client: Client = Client(serial.Serial("COM1", 9600, timeout=2))
     instrument: Instrument = Instrument(serial.Serial("COM2", 9600, timeout=2))
