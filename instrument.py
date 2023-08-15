@@ -52,17 +52,17 @@ class Instrument:
         elif command == "TYP":
             self.write_response(self.type)
         elif command == "VOL":
-            new_voltage = random.randint(00,220)
-            
-            self.write_response(str(new_voltage))
-            self.voltage = new_voltage
+            self.write_response(str(self.voltage))
         elif command == "TMP":
             new_temperature: int = random.randint(0, 85)
 
             self.write_response(str(new_temperature))
             self.temperature = new_temperature
         elif command == "CUR":
-            self.write_response(str(self.current))
+            new_current: int = random.randint(0, 2000)
+            
+            self.write_response(str(new_current))
+            self.current = new_current
         else:
             raise ValueError("Unknown command: " + command)
 

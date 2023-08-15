@@ -4,7 +4,7 @@ from instrument import Instrument
 def test_QE():
     """
     Simulates connecting to an instrument and gets 30 random voltages
-    in the range of ]25mA, 800mA[. if voltage < 25mA, print a message.
+    in the range of ]25mA, 800mA[. If voltage < 25mA, print a message.
 
     returns:
         voltage list(int): List with the voltage values
@@ -12,17 +12,17 @@ def test_QE():
     client: Client = Client(serial.Serial("COM1", 9600, timeout=2))
     instrument: Instrument = Instrument(serial.Serial("COM2", 9600, timeout=2))
     
-    voltages = []
+    currents = []
     
     for _ in range(0, 30):
-        client.write_request('VOL')
+        client.write_request('CUR')
         instrument.read_message()
         
-        voltage: int = int(client.read_response())
+        current: int = int(client.read_response())
         
-        if voltage < 25.0:
-            print(f'Threshold alert! ({voltage}mA)')
-        elif voltage < 800.0:
-            voltages.append(voltage)
+        if 25 < current < 800:
+            currents.append(current)
+        elif current < 25:
+            print(f'Threshold alert! ({current}mA)')
             
-    return voltages 
+    return currents
