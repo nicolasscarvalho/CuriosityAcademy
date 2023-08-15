@@ -3,7 +3,7 @@ from instrument import Instrument
 
 def test_QE():
     """
-    Simulates connecting to an instrument and gets 30 random voltages
+    Simulates connecting to an instrument and gets 30 random currents
     in the range of ]25mA, 800mA[. If voltage < 25mA, print a message.
 
     returns:
