@@ -1,6 +1,5 @@
 import serial
 
-
 class Client:
     """Simulated client class that reads and writes messages to a serial port.
 

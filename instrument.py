@@ -52,7 +52,10 @@ class Instrument:
         elif command == "TYP":
             self.write_response(self.type)
         elif command == "VOL":
-            self.write_response(str(self.voltage))
+            new_voltage = random.randint(00,220)
+            
+            self.write_response(str(new_voltage))
+            self.voltage = new_voltage
         elif command == "TMP":
             new_temperature: int = random.randint(0, 85)
 
