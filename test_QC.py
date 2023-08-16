@@ -11,6 +11,9 @@ def test_QC():
 
     returns:
         voltage list(int): List with voltages.
+
+    Raises:
+        ERROR voltage: If voltage > 190
     """
     client: Client = Client(serial.Serial("COM1", 9600, timeout=2))
     instrument: Instrument = Instrument(serial.Serial("COM2", 9600, timeout=2))
