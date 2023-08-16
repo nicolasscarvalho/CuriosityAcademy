@@ -6,6 +6,9 @@ def test_QC():
     """
     Simulates connecting to an instrument and gets 20 random voltages in a list.
 
+    Simulates the connection to the instrument and collects a list of 20 voltages,
+    sending an error message if it exceeds > 190V and a warning if it is = 0V
+
     returns:
         voltage list(int): List with voltages.
     """
