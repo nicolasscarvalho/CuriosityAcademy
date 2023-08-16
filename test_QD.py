@@ -1,5 +1,7 @@
-from client import Client, serial
+from client import Client
 from instrument import Instrument
+import serial
+
 
 def test_QD():
 
