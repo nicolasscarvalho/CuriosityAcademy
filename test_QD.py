@@ -16,9 +16,3 @@ def test_QD():
 
 
     return data_dictionary
-data = test_QD()
-print("Dados do Instrumento:")
-
-print(f"{key}: {value}")
-
-
