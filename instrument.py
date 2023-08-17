@@ -48,9 +48,16 @@ class Instrument:
         command = message[0:3]
 
         if command == "STA":
+            new_status = random.randint(0, 0xFFFFFFFF)
+
             self.write_response(str(self.status))
+            self.status = new_status
         elif command == "TYP":
+            new_type = random.choice(["a", "b", "c", "abc"])
+
             self.write_response(self.type)
+            self.type = new_type
+
         elif command == "VOL":
             new_voltage = random.randint(0, 220)
             

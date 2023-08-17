@@ -24,8 +24,8 @@ class Client:
         Returns:
             response (str): the response from instrument
         """
-        message = self.ser.readline().decode()
-        response = message[:3]
+        message = self.ser.readline().decode().strip()
+        response = message[:15]
 
         return response
 

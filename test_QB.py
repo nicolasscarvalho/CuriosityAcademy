@@ -18,3 +18,4 @@ def test_QB(temperatures):
 
 temperatures = test_QA()
 test_QB(temperatures=temperatures)
+

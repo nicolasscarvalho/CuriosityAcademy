@@ -26,3 +26,4 @@ def test_QE():
             print(f'Threshold alert! ({current}mA)')
             
     return currents
+
