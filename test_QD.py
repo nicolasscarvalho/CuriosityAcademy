@@ -4,6 +4,13 @@ import serial
 
 
 def test_QD():
+     """
+    Simulates connecting to an instrument.
+    A dictionary is created with 20 values of temperature, voltage and current and 5 values of types and status.
+
+    returns:
+        dictionary list (int,str): list witch temperature, voltage, current, type and status.
+    """
 
     client: Client = Client(serial.Serial("COM1", 9600, timeout=2))
     instrument: Instrument = Instrument(serial.Serial("COM2", 9600, timeout=2))
