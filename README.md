@@ -5,4 +5,4 @@ Dedicated project to carry out the communication with the instrument, using comm
 
 #### Read this in Portuguese:
 
-<kbd>[<img title="Português" alt="Português" src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/br.svg" width="22">](translations/README.pt-br.md)</kbd>
+<kbd>[<img title="Português" alt="Português" src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/br.svg" width="22">](README.pt-br.md)</kbd>
