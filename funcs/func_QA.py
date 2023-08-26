@@ -3,7 +3,7 @@ from client import Client
 from instrument import Instrument
 
 
-def test_QA():
+def func_QA() -> list[int]:
     """
     Simulates connecting to an instrument and gets 20 random temperatures
 

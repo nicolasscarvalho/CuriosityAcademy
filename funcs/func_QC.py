@@ -2,7 +2,7 @@ import serial
 from client import Client
 from instrument import Instrument
 
-def test_QC():
+def func_QC():
     """
     Simulates connecting to an instrument and gets 20 random voltages in a list.
 

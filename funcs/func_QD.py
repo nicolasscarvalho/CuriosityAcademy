@@ -2,9 +2,8 @@ from client import Client
 from instrument import Instrument
 import serial
 
-
-def test_QD():
-     """
+def func_QD():
+    """
     Simulates connecting to an instrument.
     A dictionary is created with 20 values of temperature, voltage and current and 5 values of types and status.
 

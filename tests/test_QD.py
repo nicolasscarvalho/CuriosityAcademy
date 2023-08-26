@@ -1,0 +1,1 @@
+from funcs.func_QD import func_QD
