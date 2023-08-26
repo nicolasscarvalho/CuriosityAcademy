@@ -1,5 +1,5 @@
-from func_QA import func_QA
-from func_QB import func_QB
+from funcs.func_QA import func_QA
+from funcs.func_QB import func_QB
 
 def test_QB():
     """
