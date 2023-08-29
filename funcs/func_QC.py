@@ -34,7 +34,7 @@ def func_QC():
             print("Voltage = 0.")
 
         if voltage > 190:
+            print("ERROR! CRITICAL VOLTAGE > 190")
             raise ValueError("Voltage > 190.")
-
     return voltages
 
