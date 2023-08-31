@@ -14,7 +14,7 @@ def func_QE():
     
     currents = []
     
-    for _ in range(0, 30):
+    while len(currents) != 30:
         client.write_request('CUR')
         instrument.read_message()
         
