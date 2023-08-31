@@ -2,8 +2,8 @@
 
 Dedicated project to carry out the communication with the instrument, using commands to be sent and to read the responses.
 
-### 📝Questions
 
+ﾠﾠ<h2 align="center">➤ Questions📝</h2>
 | Question | Description | Responsible | Link |
 | ------ | ------ | ------ | ------ |
 | Question A | Create a method that stores the temperatures read in a list (for this, make a loop that sends the TMP command at least 20 times to have a satisfactory return) | <a href="https://github.com/nicolasscarvalho"><img src="https://avatars.githubusercontent.com/u/98130635?v=4" width="100px;" alt="Nicolas Carvalho"/><br /><sub><b>Nicolas Carvalho</b></sub></a><br /></td> | [Click Here](funcs/func_QA.py)
@@ -12,7 +12,35 @@ Dedicated project to carry out the communication with the instrument, using comm
 | Question D | Create a dictionary and store at least 20 pieces of data for each attribute that represent physical quantities (temperature, voltage, etc.) and 5 for the rest. The key must be the name of the instrument attribute and its value must be a list of 20 elements. | <a href="https://github.com/PedroKeita"><img src="https://avatars.githubusercontent.com/u/82671771?v=4" width="100px;" alt="Pedro Lucas"/><br /><sub><b>Pedro Lucas</b></sub></a><br /></td> | [Click Here](funcs/func_QD.py)
 | Question E | Collect 30 current elements and store only values greater than 25 mA and less than 800 mA. Print a message written “Threshold alert!” each time receiving less than 25 mA. | <a href="https://github.com/Akkessatsu"><img src="https://avatars.githubusercontent.com/u/99400178?v=4" width="100px;" alt="Raul Braga"/><br /><sub><b>Raul Braga</b></sub></a><br /></td> | [Click Here](funcs/func_QE.py)
 
+ﾠﾠ<h2 align="center">➤ File Structure: 🏛</h2>
+```bash
+  communication-instrument/
+  │
+  ├── funcs/
+  │   ├── func_QA.py
+  │   ├── func_QB.py
+  │   ├── func_QC.py
+  │   ├── func_QD.py
+  │   └── func_QE.py
+  │
+  │── tests/
+  │   ├── test_QA.py
+  │   ├── test_QB.py
+  │   ├── test_QC.py
+  │   ├── test_QD.py
+  │   └── test_QE.py
+  │
+  ├── README.md
+  ├── README.pt-br.md
+  ├── client.py
+  └── instrument.py
+```
+<h2 align="center">➤ How to use? 🤔</h2>
 
+1. Run the following command below to run the project
+   ```bash
+   python -m pytest path/file.py
+   
 #### Read this in Portuguese:
 
 <kbd>[<img title="Português" alt="Português" src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/br.svg" width="22">](README.pt-br.md)</kbd>
